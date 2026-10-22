@@ -1,23 +1,87 @@
 aid: ansell
+
 name: Ansell
-description: 'Ansell is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Ansell Limited (ASX: ANN) is an Australian-headquartered global manufacturer of personal protective equipment, describing itself as "a global leader in personal protection and safety solutions, enabling safer workforces through quality, expertise, and sustainable innovation." It operates Healthcare (surgical and examination gloves) and Industrial (hand and chemical protection) segments. The company traces its origins to 1893 (Dunlop Perdriau, later Pacific Dunlop) and took the Ansell name in 2002. It publishes no public developer API. Ansell was surfaced through the API Evangelist harvest backlog (australia-apidays-2026).'
+
 url: https://raw.githubusercontent.com/api-evangelist/ansell/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Personal Protective Equipment
+- Gloves
+- Healthcare
+- Manufacturing
+- Industrial Safety
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://investor.ansell.com/FormBuilder/_Resource/_module/WEtAsUy_jk6Kmk_vOw9f5g/image/ansell_logo_2025.png
+
 common:
+- type: SecurityTxt
+  url: well-known/ansell-security.txt
+- type: WellKnown
+  url: well-known/ansell-well-known.yml
+- type: Security
+  url: https://www.ansell.com/us/en/legal/vulnerability-disclosure-policy
+- type: Hosts
+  url: hosts/ansell-hosts.yml
+- type: Vendors
+  url: vendors/ansell-vendors.yml
+- type: VulnerabilityDisclosure
+  url: security/ansell-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/ansell-domain-security.yml
 - type: Website
-  url: https://ansell.com/
+  url: https://www.ansell.com/
+- type: Investors
+  url: https://investor.ansell.com/investor-centre/
+- type: Contact
+  url: https://investor.ansell.com/contact/?page=investor-relations
+- type: PrivacyPolicy
+  url: https://www.ansell.com/int/en/legal/privacy-policy
+
+apis: []
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: www.ansell.com answers every path (homepage 200, privacy page 403) with an Incapsula bot challenge (212-byte script shell, robots noindex). A headless render got 0 characters back, so nothing on the main site was readable. Identity comes from Wikipedia's infobox (website = https://www.ansell.com/) and the company's own investor portal, investor.ansell.com, which loads normally and links to the www.ansell.com privacy and cookie policies. No developer portal, API documentation or API was found.
+  evidence:
+  - url: https://www.ansell.com/
+    status: 200
+    note: Incapsula challenge shell
+  - url: https://investor.ansell.com/investor-centre/
+    status: 200
+  - url: https://investor.ansell.com/contact/?page=investor-relations
+    status: 200
+  - url: https://www.ansell.com/int/en/legal/privacy-policy
+    status: 403
+    note: bot challenge; linked from investor.ansell.com footer
+  - url: https://en.wikipedia.org/wiki/Ansell
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

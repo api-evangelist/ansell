@@ -1,0 +1,14 @@
+name: Ansell packages
+generated: '2026-10-21'
+method: none
+note: >-
+  Checked, nothing found. Ansell publishes no public developer API, SDK or CLI. npm search for
+  "ansell" returned only unrelated packages (top hit conflict-radar-mcp); pypi.org/pypi/ansell/json
+  returned 404; web searches for an Ansell developer API, SDK or integration docs found none.
+checked:
+- url: https://registry.npmjs.org/-/v1/search?text=ansell&size=5
+  status: 200
+  note: no Ansell first-party package
+- url: https://pypi.org/pypi/ansell/json
+  status: 404
+packages: []

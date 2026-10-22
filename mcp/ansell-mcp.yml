@@ -1,0 +1,20 @@
+name: Ansell MCP server
+type: MCPServer
+provider: Ansell
+generated: '2026-10-21'
+method: none
+status: none
+description: >-
+  No official hosted or local MCP server from Ansell was found, and no candidate
+  tool list can be derived because Ansell publishes no OpenAPI or other public
+  developer API contract (pre-flight contract discovery on www.ansell.com,
+  investor.ansell.com and api.ansell.com found no OpenAPI, AsyncAPI, GraphQL or MCP).
+source:
+  - https://www.ansell.com/
+  - https://investor.ansell.com/
+  - 'web search: "Ansell MCP server OR developer API OR llms.txt" (2026-10-21, no Ansell results)'
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+tools: []

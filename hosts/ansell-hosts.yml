@@ -1,0 +1,52 @@
+generated: '2026-10-21'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 3
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.ansell.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: ansell.com
+  role: api
+  relation: own
+- host: investor.ansell.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Investors
+  - Contact
+  serves: []
+  registrable_domain: ansell.com
+  role: other
+  relation: own
+- host: www.ansell.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Security
+  - Website
+  - PrivacyPolicy
+  serves:
+  - cdn
+  vendor: imperva
+  registrable_domain: ansell.com
+  role: website
+  relation: own
